@@ -1,0 +1,65 @@
+{% load static %}
+{% include 'template/adminmenu.html' %}
+    
+    <section class="hero-wrap hero-wrap-2" 
+    style="background-image: url({% static 'images/bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread">ADMIN PANEL</h1>
+            <p class="breadcrumbs"><span class="mr-2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 order-md-last ftco-animate">
+            <p>
+              <img src="images/practice-1.jpg" alt="" class="img-fluid">
+            </p>
+           
+            <div class="row mt-5 pt-5">
+              <div class="col-md-12">
+                <h2 class="mb-4 font-weight-bold" style="text-align: center;">ADD CURRENT NEWS </h2>
+              </div>
+              <div class="col-lg-8 offset-2">
+    <form action="/addnews/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="TITLE" name="t1">
+    </div>
+    <div class="form-group">
+    <input type="date" class="form-control" placeholder="DATE" name="t2">
+    </div>
+    <div class="form-group">
+    <input type="time" class="form-control" placeholder="TIME" name="t3">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="PLACE" name="t4">
+    </div>
+    <div class="form-group">
+    <textarea class="form-control" placeholder="MATTER" name="t5"></textarea>
+    </div>
+
+    <div class="form-group">
+    <input type="submit" class="btn btn-lg bg-success" value="ADD NEWS">
+    </div>
+                </form>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            
+
+
+          </div> <!-- .col-md-8 -->
+          {% include 'template/admin_sidebar.html' %}
+      </div>
+    </section> <!-- .section -->
+
+
+    {% include 'template/adminfooter.html' %}

@@ -1,0 +1,78 @@
+{% load static %}
+{% include 'template/usermenu.html' %}
+    
+    <section class="hero-wrap hero-wrap-2" 
+    style="background-image: url({% static 'my/5.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread">VIEW ALL WANTED PERSON </h1>
+            <p class="breadcrumbs"><span class="mr-2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+   <section class="ftco-section bg-light">
+      <div class="container-fluid">
+        
+        <div class="row">
+          {% for single in alldata %}
+          
+          <div class="col-lg-3 col-sm-6">
+            <div class="block-2 ftco-animate">
+              <div class="flipper">
+                <div class="front" 
+                style="background-image: url({{ single.image.url }});">
+                  <div class="box">
+                    <h2 style="text-transform: uppercase;">{{single.name}}</h2>
+                    <p>{{single.date}}</p>
+                  </div>
+                </div>
+                 <div class="back">
+                  <!-- back content -->
+                   <h3 style="text-align: center;text-decoration: underline; text-transform: uppercase;">{{single.name}}( {{single.sex}} )</h3>
+
+                  <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">Age :-{{single.age}}</h6>
+                   
+                  </blockquote>
+                  <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">Place :-{{single.place}}</h6>
+                  </blockquote>
+                   <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">crime :-{{single.type1}}</h6>
+                  </blockquote>
+                   <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">date :-{{single.date}}</h6>
+                  </blockquote>
+                   <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">cmp1 :-{{single.cmp1}}</h6>
+                  </blockquote>
+                   <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">height :-{{single.height}}</h6>
+                  </blockquote>
+                  <blockquote style="padding-left: 10px; "> 
+                   <h6 style="text-transform: uppercase;">case :-{{single.case1}}</h6>
+                  </blockquote>
+                 </div>
+              </div>
+            </div>
+          </div>
+        
+          {% endfor %}
+          
+          
+          
+          
+        </div>
+        
+      </div>
+    </section>
+
+
+    
+
+    {% include 'template/userfooter.html' %}

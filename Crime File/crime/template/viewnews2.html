@@ -1,0 +1,66 @@
+{% load static %}
+{% include 'template/usermenu.html' %}
+    
+    <section class="hero-wrap hero-wrap-2" 
+    style="background-image: url({% static 'images/bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread">VIEW ALL NEWS </h1>
+            <p class="breadcrumbs"><span class="mr-2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+   <section class="ftco-section bg-light">
+      <div class="container-fluid">
+        
+        <div class="row">
+          {% for single in alldata %}
+          <div class="col-lg-3 col-sm-6">
+            <div class="block-2 ftco-animate">
+              <div class="flipper">
+                <div class="front">
+                  <div class="box">
+                    <h2>{{single.title}}</h2>
+                    <p>{{single.date}}</p>
+                  </div>
+                </div>
+                <div class="back" title="DELETE RECORD">
+                  <!-- back content -->
+                   <h3 style="text-align: center;text-decoration: underline;">{{single.title}}</h3>
+                  <blockquote>
+                    <p style="text-align: justify;">&ldquo;{{single.matter}}.&rdquo;</p>
+                  </blockquote>
+                  <div class="author d-flex">
+                    <div class="image mr-5 align-self-center">
+                      <img src="images/person_1.jpg" alt="">
+                    </div>
+                    <div class="name align-self-right">
+                      
+                      <h6>Date :-{{single.date}}( {{single.time}} )</h6>
+                      <h6>Place :- {{single.place}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          {% endfor %}
+          
+          
+          
+          
+        </div>
+        
+      </div>
+    </section>
+
+
+    
+
+    {% include 'template/userfooter.html' %}

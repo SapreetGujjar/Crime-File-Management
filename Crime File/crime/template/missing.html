@@ -1,0 +1,74 @@
+{% load static %}
+{% include 'template/adminmenu.html' %}
+    
+    <section class="hero-wrap hero-wrap-2" 
+    style="background-image: url({% static 'my/3.png' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread">ADMIN PANEL</h1>       
+            <p class="breadcrumbs"><span class="mr-2"><a href="/admin1/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>MISSING PERSON <i class="ion-ios-arrow-forward"></i></span></p>
+    
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 order-md-last ftco-animate">
+           <div class="row mt-5 pt-5">
+              <div class="col-md-12">
+                <h2 class="mb-4 font-weight-bold" style="text-align: center;">ADD MISSING PERSON</h2>
+              </div>
+              <div class="col-lg-8 offset-2">
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="NAME" name="t1">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="AGE" name="t2">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="SEX" name="t3">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="PLACE" name="t4">
+    </div>
+    <div class="form-group">
+    <input type="date" class="form-control" placeholder="DATE OF MISSING
+" name="t5">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="COMPLEXION" name="t6">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" placeholder="HEIGHT" name="t7">
+    </div>
+    <div class="form-group">
+    <input type="file" class="form-control" placeholder="IMAGE" name="t8">
+    </div>
+
+    <div class="form-group">
+    <textarea class="form-control" placeholder="BRIEF OF CASE" name="t9"></textarea>
+    </div>
+
+    <div class="form-group">
+    <input type="submit" class="btn btn-lg bg-success" value="ADD NEWS">
+    </div>
+                </form>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            
+
+
+          </div> <!-- .col-md-8 -->
+          {% include 'template/admin_sidebar.html' %}
+      </div>
+    </section> <!-- .section -->
+
+
+    {% include 'template/adminfooter.html' %}

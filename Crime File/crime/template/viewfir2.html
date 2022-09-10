@@ -1,0 +1,72 @@
+{% load static %}
+{% include 'template/usermenu.html' %}
+    
+    <section class="hero-wrap hero-wrap-2" 
+    style="background-image: url({% static 'my/8.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5 text-center">
+            <h1 class="mb-3 bread">VIEW ALL FIR REPORT </h1>
+            <p class="breadcrumbs"><span class="mr-2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+   <section class="ftco-section bg-light">
+      <div class="container-fluid">
+        <style type="text/css">
+          th{
+            text-align: center;
+            color: black;
+          }
+        </style>
+        <div class="row">
+          <table class="table table-striped table-bordered">
+            <tr>
+                <th>Serial No</th>
+                <th>name</th>
+                <th>Father name</th>
+                <th>Gender</th>
+                <th>Place</th>
+                <th>date</th>
+                <th>Time</th>
+                <th>ID-proof</th>
+                <th>case </th>
+                <th>Address</th>
+                <th>image</th>
+                </tr>
+              {% for single in alldata %}
+                <tr>
+                    <th>{{single.p_id}}</th>
+                    <th>{{single.name}}</th>
+                    <th>{{single.fname}}</th>
+                    <th>{{single.sex}}</th>
+                    <th>{{single.place}}</th>
+                    <th>{{single.date}}</th>
+                    <th>{{single.time}}</th>
+                    <th>{{single.iproof}}</th>
+                    <th>{{single.case1}}</th>
+                    <th>{{single.address}}</th>
+                    <th><img src="{{single.image.url}}" height="100" width="100"/></th>
+                    
+                    
+
+                  </tr>  
+          {% endfor %}
+        </table>
+          
+          
+          
+          
+        </div>
+        
+      </div>
+    </section>
+
+
+    
+
+    {% include 'template/userfooter.html' %}
