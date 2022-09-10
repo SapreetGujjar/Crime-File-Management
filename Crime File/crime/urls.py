@@ -1,0 +1,63 @@
+from django.contrib import admin
+from django.urls import path
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index),
+    path('index/', views.index),
+    path('login/', views.login),
+    path('logincode/', views.logincode),
+    path('regcode/', views.regcode),
+    path('user/', views.user),
+    path('admin1/', views.admin1),
+    path('logout/', views.logout),
+    path('addnews/', views.addnews),
+    path('missing/', views.missing),
+    path('wanted/', views.wanted),
+    path('fir/', views.fir),
+    path('register/', views.register),
+    path('history/', views.history),
+    path('d_news/', views.d_news),
+    path('d_missing/', views.d_missing),
+    path('d_wanted/', views.d_wanted),
+    path('d_fir/', views.d_fir),
+    path('d_register/', views.d_register),
+    path('d_history/', views.d_history),
+    path('delete_wanted/<int:pk>/', views.delete_wanted, name="delete_wanted"),
+    path('delete_news/<int:pk>/', views.delete_news, name="delete_news"),
+    path('delete_missing/<int:pk>/', views.delete_missing, name="delete_missing"),
+    path('delete_fir/<int:pk>/', views.delete_fir, name="delete_fir"),
+    path('delete_register/<int:pk>/', views.delete_register, name="delete_register"),
+    path('delete_history/<int:pk>/', views.delete_history, name="delete_history"),
+    path('editprofile/',views.editprofile),
+    path('u_complaint/',views.u_complaint),
+    path('s_complaint/',views.s_complaint),
+    path('delete_cmp/<int:pk>/', views.delete_cmp, name="delete_cmp"),
+    path('u_crime/',views.u_crime),
+    path('s_crime/',views.s_crime),
+    path('delete_crime/<int:pk>/', views.delete_crime, name="delete_crime"),
+    path('u_message/',views.u_message),
+    path('s_message/',views.s_message),
+    path('delete_message/<int:pk>/', views.delete_message, name="delete_message"),
+    path('s_news/',views.s_news),
+    path('s_missing/',views.s_missing),
+    path('s_wanted/',views.s_wanted),
+    path('s_fir/',views.s_fir),
+    path('s_register/',views.s_register),
+    path('s_history/',views.s_history),
+    path('user_complaint/',views.user_complaint),
+    path('user_crime/',views.user_crime),
+    path('user_message/',views.user_message),
+    path('cmp_rpy/<int:pk>/', views.cmp_rpy, name="cmp_rpy"),
+    path('crime_rpy/<int:pk>/', views.crime_rpy, name="crime_rpy"),
+    path('msg_rpy/<int:pk>/', views.msg_rpy, name="msg_rpy"),
+    path('cmp_reply/',views.cmp_reply),
+    path('crime_reply/',views.crime_reply),
+    path('msg_reply/',views.msg_reply),
+    
+]
+if settings.DEBUG:
+   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
